@@ -100,7 +100,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="footer-end">The git-hub link for this web-app is
-                    <a href="https://github.com/faisal-kursheedali/promodoro" className='footer-end-link'>here </a>
+                    <a href="https://github.com/faisal-kursheedali/faisal" className='footer-end-link'>here </a>
                 </div>
             </div>
         </>
