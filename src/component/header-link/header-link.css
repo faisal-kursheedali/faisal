@@ -1,0 +1,27 @@
+.header-link-container{
+    justify-content: center;
+    display: flex;
+
+}
+.header-link{
+    /* margin: 1rem initial; */
+    padding: 1rem;
+}
+.header-link-list{
+    display: flex;
+    padding-left: 0px;
+    list-style: none;
+    margin: initial;
+    /* justify-content: center; */
+}
+.header-link-list-item{
+    margin: .5rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+.header-link-link{
+    color: initial;
+}
+.header-link-list-item:hover{
+    scale: .8;
+}

@@ -1,0 +1,66 @@
+.footer-container{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: black;
+    color: white;
+    padding-top: 2rem;
+    min-height: 50vh;
+    /* background-color: black;
+    color: white; */
+    /* width: 100%; */
+}
+.footer-content{
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+.footer-about-app,.footer-link,.footer-socialmedia,.footer-project{
+    margin: 1rem;
+}
+.footer-about-app{
+    max-width: 250px;
+}
+.footer-list-head{
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.footer-list{
+    padding-left: 0px;
+    list-style: none;
+}
+.footer-brand-name{
+    font-size: 1.5rem;
+    margin: auto 4px;
+    color: lightblue;
+    font-weight: 700;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.footer-bold{
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.footer-list-item:hover{
+    text-decoration: underline;
+    color:#c1d72e;
+}
+.footer-list-item-link{
+    text-decoration: none;
+    color:inherit;
+    cursor: pointer;
+}
+.footer-end{
+    margin-bottom:  1.5rem;
+    margin-top: auto;
+    text-align: center;
+    font-size: 1rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.footer-end-link{
+    margin-left: 4px;
+    color: #c1d72e;
+
+}

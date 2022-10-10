@@ -1,0 +1,122 @@
+.header{
+    padding-top: 1rem;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.landing-header{
+    display: flex;
+    width: 90vw;
+    margin: auto;
+}
+.landing-img{
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    width: 50%;
+    max-width: 300px;
+    object-fit: cover;
+    padding: 1rem;
+    /* optional */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+.landing-detail{
+    padding: 1rem;
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.landing-detail-head{
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: .5rem 1rem;
+    margin-bottom: 0px;
+}
+.landing-detail-sub-head{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: .5rem 1rem;
+}
+.landing-detail-sub-head-iam{
+    color: red;
+}
+.landing-detail-sub-head-mern{
+    color: #0ea5e9;
+}
+.landing-detail-desc{
+    margin: 0px .5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.header-link{
+    /* margin: 1rem initial; */
+    padding: 1rem;
+}
+.header-link-list{
+    display: flex;
+    padding-left: 0px;
+    list-style: none;
+    margin: initial;
+    /* justify-content: center; */
+}
+.header-link-list-item{
+    margin: .5rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+.header-link-link{
+    color: inherit;
+}
+.header-link-list-item:hover{
+    scale: .8;
+}
+.landing-btn-container{
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+
+    flex-wrap: wrap;
+}
+.landing-btn-primary,.landing-btn-secondary{
+    padding: 8px 1rem;
+    border-radius: 3rem;
+    font-size: 1.2rem;
+    outline: 0px;
+    border: 4px solid #1D9BF0;
+    color: #1D9BF0;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 1rem;
+    
+}
+.landing-btn-primary{
+    border: 0px;
+    background-color: #1D9BF0;
+    color: white;
+    
+}
+
+.landing-btn-secondary{
+    background-color: white;
+}
+.landing-btn-primary-link{
+    color: inherit;
+    text-decoration: none;
+}
+@media (max-width:767px) {
+    .landing-header{
+        flex-direction: column;
+        align-items: center;
+    }
+    .landing-img{
+        width: 100%;
+        max-width: 250px;
+    }
+    .landing-detail{
+        padding: 0px;
+        padding-top: 1rem;
+    }
+}

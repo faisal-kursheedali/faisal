@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Passions+Conflict&display=swap');
+.quote-container{
+    width: 50%;
+    text-align: center;
+    margin: 2rem auto;
+    padding: 0px 4px;
+    box-sizing: border-box;
+    font-family: 'Passions Conflict', cursive;
+}
+.quote{
+    font-size: 3rem;
+    font-weight: 900;
+}
+.quote-author{
+    padding-top: .75rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+@media (max-width:426px) {
+    .quote-container{
+        width: 100%;
+    }
+}

@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap');
+.center-txt-container{
+    margin: 1rem auto;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+.center-txt{
+    letter-spacing: 6px;
+    word-spacing: .5rem;
+    font-family: 'Anton', sans-serif;
+    font-family: 'Bebas Neue', cursive;
+}

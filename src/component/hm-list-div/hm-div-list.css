@@ -1,0 +1,46 @@
+.hm-list-div-container{
+    margin: 1rem;
+    padding: 1rem;
+}
+.hm-list-div-head{
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-left: 1.5rem;
+}
+.hm-list-div-list{
+    padding-left: 0px;
+    list-style: none;
+    padding-top: 1.5rem ;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+.hm-list-div-link{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: red;
+    border: 1px solid red;
+    border-radius: .5rem;
+    padding: 2px 6px;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 2rem;
+    width: max-content;
+    cursor: pointer;
+}
+@media (max-width:750px) {
+    .hm-list-div-container{
+        padding: 0px;
+        margin: initial;
+        width: 100%;
+    }
+    .hm-list-div-list{
+        justify-content: center;
+    
+    }
+    .hm-list-div-link{
+        margin: 1.2rem auto;
+    }
+}

@@ -1,0 +1,16 @@
+.blog-conatainer{
+    padding-top: 1.5rem;
+    min-height: 100vh;
+    padding-left: 2rem;
+}
+.blog-head{
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 1.5rem;
+}
+@media (max-width:750px) {
+    .blog-conatainer{
+        padding-left: 0px;
+    }
+}

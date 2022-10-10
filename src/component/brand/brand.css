@@ -1,0 +1,15 @@
+.brand-logo{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.brand-logo-txt{
+    font-size: 1.5rem;
+    margin-left: 6px;
+    /* font-family: 'Dancing Script', cursive; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.brand-logo-img{
+    width: max-content;
+    width: 35px;
+}

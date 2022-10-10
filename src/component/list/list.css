@@ -1,0 +1,50 @@
+.list-container{
+    line-height: 1.5rem;
+    padding-left: 1rem;
+    max-width: 80vw;
+    margin:1rem auto;
+
+}
+.list-header{
+    padding: .5rem 0px;
+    padding-left: .5rem;
+}
+.list-head{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.list-sub{
+    font-size: 1.2rem;
+    font-weight: 500;
+
+}
+.list-desc{
+    padding-left: .2rem;
+    font-size: 1.1rem;
+}
+.list-ul{
+    width: 75%;
+    margin: auto;
+    margin-top: 1rem;
+    padding-left: 0px;
+    list-style: none;
+}
+.list-item{
+        padding: .5rem 0px;
+
+}
+.list-item-bullet{
+    padding-right: .7rem;
+    color: gold;
+    font-size: 1.05rem;
+}
+@media (max-width:750px) {
+    .list-container{
+        padding-left:1rem;
+        max-width: 100vw;
+        margin-right: 0px;
+        padding-right: 4px;
+        margin-left:.5rem ;
+        margin-right:.5rem ;
+    }
+}

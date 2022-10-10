@@ -1,0 +1,16 @@
+.card-list-conatainer{
+    width: 100%;
+}
+.card-list{
+    padding-left: 12px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (max-width:750px) {
+    .card-list{
+       justify-content: center;
+       padding-left: 0px;
+    }
+}
