@@ -6,7 +6,7 @@ export default [
      head:"How to start web development",
      sub:"Web development is a fast-growing field, It has enormous scope.....",
     //  desc:"ljb",
-     blogLink:"https://faisal-blog.hashnode.dev/how-to-start-web-development",
+     link:"https://faisal-blog.hashnode.dev/how-to-start-web-development",
      img:`${window.location.origin}/assets/blog2.png`,
     
     },
@@ -15,7 +15,7 @@ export default [
      head:"SIMPLE WEBSITE",
      sub:"When we come to the topic of website building,.....",
     //  desc:"ljb",
-     blogLink:"https://faisal-blog.hashnode.dev/the-simple-website",
+     link:"https://faisal-blog.hashnode.dev/the-simple-website",
      img:`${window.location.origin}/assets/blog1.png`,
     
     },
@@ -24,7 +24,7 @@ export default [
      head:"UN-USED TAGS :",
      sub:"When we talk about Web development, we always come.....",
     //  desc:"ljb",
-     blogLink:"https://faisal-blog.hashnode.dev/tags-that-we-dont-use-the-most",
+     link:"https://faisal-blog.hashnode.dev/tags-that-we-dont-use-the-most",
      img:`${window.location.origin}/assets/blog3.png`,
     
     },
