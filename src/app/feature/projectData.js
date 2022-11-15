@@ -11,7 +11,7 @@ export default [
      head:"MYTube",
      sub:"this is the fully functional fullstack video library app.",
      desc:"",
-     tag:"new",
+     tag:"neog",
      detail:["html","css","js","react","router",],
      logoImg:`${window.location.origin}/assets/macro1-logo.png`,
      img:`${window.location.origin}/assets/macro1.png`
@@ -25,7 +25,7 @@ export default [
      head:"interior",
      sub:"this is the fully functional fullstack ecomerce app.",
      desc:"",
-     tag:"new",
+     tag:"neog",
      detail:["html","css","js","react","router","redux"],
      logoImg:`${window.location.origin}/assets/macro2-logo.png`,
      img:`${window.location.origin}/assets/macro2.png`
@@ -39,7 +39,7 @@ export default [
      head:"BUI",
      sub:"this is the fully functional CSS library app.",
      desc:"",
-     tag:"new",
+     tag:"neog",
      detail:["html","css","js","react","redux","router"],
      logoImg:`${window.location.origin}/assets/macro3-logo.png`,
      img:`${window.location.origin}/assets/macro3.png`
@@ -53,8 +53,8 @@ export default [
      head:"Promodoro",
      sub:"this is the fully functional Promodoro app.",
      desc:"",
-     tag:"new",
-     detail:["html","css","ts","router"],
+     tag:"neog",
+     detail:["html","css","ts","router","jest"],
      logoImg:`${window.location.origin}/assets/mini1-logo.png`,
      img:`${window.location.origin}/assets/mini1.png`
     },
@@ -67,10 +67,24 @@ export default [
      head:"My tab",
      sub:"this is the fully functional browser new tab page.",
      desc:"",
-     tag:"new",
+     tag:"neog",
      detail:["html","css","react","redux"],
     //  logoImg:`${window.location.origin}/assets/mini1-logo.png`,
      img:`${window.location.origin}/assets/mini2.png`
+    },
+    {
+     _id:uuid(),
+     hoverContent:"",
+     type:"mini",
+     link:"https://ts-starter.netlify.app/",
+     gitLink:"https://github.com/faisal-kursheedali/webpack-starter",
+     head:"TypeScript starter kit",
+     sub:"This is the starter kit for web application development using TypeScript. This was built using Webpack.",
+     desc:"",
+     tag:"neog",
+     detail:["html","css","react","ts","js","web","eslint","babel","prettier"],
+     logoImg:`${window.location.origin}/assets/mini3-logo.png`,
+     img:`${window.location.origin}/assets/mini3.png`
     },
     {
      _id:uuid(),
@@ -154,7 +168,7 @@ export default [
      sub:"I love travelling, so this are he place I like the most in India. You can check them by clicking the button bellow.",
      desc:"",
     //  tag:"new",
-     detail:["html","css","js"],
+     detail:["html","css","js","react"],
      logoImg:`${window.location.origin}/assets/micro6-logo.png`,
      img:`${window.location.origin}/assets/micro6.png`
     },
@@ -168,7 +182,7 @@ export default [
      sub:"I struggle with understanding food names of the food mojis. Do you too? If yes, then see this library of food emojis with meaning",
      desc:"",
     //  tag:"new",
-     detail:["html","css","js"],
+     detail:["html","css","js","react"],
      logoImg:`${window.location.origin}/assets/micro7-logo.png`,
      img:`${window.location.origin}/assets/micro7.png`
     },

@@ -33,6 +33,11 @@ const Project = () => {
       "Micro - These are beginner-level projects.",
     ]}
     />
+    <div className="project-note">
+
+    
+    📌 if you are from <span style={{backgroundColor:"blue",color:"white",padding:"4px",fontWeight:"600"}}>NEOG</span> then my Macro and Mini projects are my level 1 projects. 
+    </div>
         {
           macro.length>0?<div className='project-type'><div className="project-type-head">
           Macro projects

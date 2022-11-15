@@ -4,7 +4,7 @@ import {AiOutlineArrowDown,AiOutlineArrowUp,AiFillHtml5,AiFillEye,AiFillCode} fr
 import {DiCss3} from "react-icons/di"
 // import {IoLogoJavascript} from "react-icons/io"
 import {FaReact} from "react-icons/fa"
-import {GiJesterHat} from "react-icons/gi"
+import {SiJest,SiEslint,SiPrettier,SiBabel } from "react-icons/si"
 import {useSelector} from "react-redux"
 import {SiReactrouter,SiRedux,SiTypescript,SiWebpack,SiJavascript} from "react-icons/si"
 
@@ -53,7 +53,7 @@ const ProjectCard= ({data}) => {
               data.detail.map((i,index)=>{
                 return (
                   <div className="project-card-detail-item" key={index}>
-                    {i==="html"?<AiFillHtml5 style={{color:"brown"}}/>:i==="css"?<DiCss3 style={{color:"blue"}}/>:i==="js"?<SiJavascript style={{color:"gold"}}/>:i==="react"?<FaReact style={{color:"blue"}}/>:i==="router"?<SiReactrouter style={{color:"red"}}/>:i==="redux"?<SiRedux style={{color:"blueviolet"}}/>:i==="ts"?<SiTypescript style={{color:"navy"}}/>:i==="just"?<GiJesterHat style={{color:"brown"}}/>:i==="web"?<SiWebpack style={{color:"dodgerblue"}}/>:""}
+                    {i==="html"?<AiFillHtml5 style={{color:"brown"}}/>:i==="css"?<DiCss3 style={{color:"blue"}}/>:i==="js"?<SiJavascript style={{color:"gold"}}/>:i==="react"?<FaReact style={{color:"blue"}}/>:i==="router"?<SiReactrouter style={{color:"red"}}/>:i==="redux"?<SiRedux style={{color:"blueviolet"}}/>:i==="ts"?<SiTypescript style={{color:"navy"}}/>:i==="jest"?<SiJest style={{color:"brown"}}/>:i==="web"?<SiWebpack style={{color:"dodgerblue"}}/>:i==="eslint"?<SiEslint style={{color:"blue"}}/>:i==="prettier"?<SiPrettier style={{color:"orange"}}/>:i==="babel"?<SiBabel style={{color:"gold"}}/>:""}
                   </div>
                 )
               })
