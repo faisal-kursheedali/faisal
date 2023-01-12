@@ -16,7 +16,7 @@ const Nav = () => {
       <div className="nav-box">
         <Brand/>
         {
-          state.isDark?<span className="nav-logo-mode" onClick={()=>dispatch(setDarkmode(false))}><BsSun/></span>:<span className="nav-logo-mode" onClick={()=>dispatch(setDarkmode(true))}><BsMoonStars/></span>
+          state.isDark?<span className="nav-logo-mode" onClick={()=>dispatch(setDarkmode(false))}><BsSun style={{color:"yellow"}}/></span>:<span className="nav-logo-mode" onClick={()=>dispatch(setDarkmode(true))}><BsMoonStars/></span>
         }
         
       <ul className="nav-list">
