@@ -7,7 +7,7 @@ import {MdEmail} from "react-icons/md"
 import {BsDiscord} from "react-icons/bs"
 import { useNavigate } from 'react-router-dom'
 
-const CmnHeader = ({data="Hey, Hi 👋 This is me, Faisal. I am an undergraduate student who has a lot of interest in exploring new technologies.Web development is my interesting field, where I always work hard and explore new things. I have done a lot of projects and websites. I have also written some blogs. Please explore them all."}) => {
+const CmnHeader = ({data="Hey, Hi 👋 This is me, Faisal. A skilled professional with expertise in both application development using Flutter and web development with the MERN stack. Having successfully navigated through academic challenges, I've honed my skills in translating creative ideas into practical solutions. Explore my portfolio to see the range of projects in Flutter and MERN that reflect my passion and dedication to web and app development."}) => {
   const navigate=useNavigate();
   
   return (
@@ -22,7 +22,7 @@ const CmnHeader = ({data="Hey, Hi 👋 This is me, Faisal. I am an undergraduate
             </div>
             <div className="landing-detail-sub-head"> 
             <span className="landing-detail-sub-head-iam">I am </span>
-            <span className="landing-detail-sub-head-mern">MERN DEV</span>
+            <span className="landing-detail-sub-head-mern">Software Development Engineer</span>
             </div>
             <div className="landing-detail-desc">
               {data}
