@@ -1,6 +1,6 @@
 
 import {v4 as uuid} from "uuid"
-export default [
+const projects = [
     // "html","css","js","react","web","ts","router","redux","just"
     {
      _id:uuid(),
@@ -244,4 +244,6 @@ export default [
     },
     
     
-]
+];
+
+export default projects;

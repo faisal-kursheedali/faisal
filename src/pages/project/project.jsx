@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React/*, { useState }*/ from 'react'
 import { useSelector } from 'react-redux'
 import { PROJECT } from '../../app/constant';
 import { CardList, CenterTxt, List, Para } from '../../component';
@@ -7,7 +7,7 @@ import "./project.css"
 const Project = () => {
   const state = useSelector(store => store.state);
   const data = state.projectData;
-  const [readMore, setReadMore] = useState(false);
+  // const [readMore, setReadMore] = useState(false);
   // let macro=[],mini=[],micro=[]
   // data.forEach(i=> {
   //   if (i.type==="macro") {

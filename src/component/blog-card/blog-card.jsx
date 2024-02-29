@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "./blog-card.css"
 import { FaBook } from "react-icons/fa"
 // import { DiCss3 } from "react-icons/di"
