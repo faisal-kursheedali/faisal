@@ -1,7 +1,7 @@
 import React/*, { useState }*/ from 'react'
 import { useSelector } from 'react-redux'
 import { PROJECT } from '../../app/constant';
-import { CardList, CenterTxt, List, Para } from '../../component';
+import { CardList, CenterTxt, List/*, Para*/ } from '../../component';
 import "./project.css"
 
 const Project = () => {
