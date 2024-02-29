@@ -2,9 +2,16 @@ import { useSelector } from 'react-redux';
 import './App.css';
 import Main from './main';
 import {useEffect} from "react"
+import { postUserAction, userEntry } from './api';
 
 function App() {
   const state=useSelector(store=>store.state);
+  document.onvisibilitychange = async () => {
+    await postUserAction(state.userAction);
+  };  
+  window.onload = async() => {
+    await userEntry();
+  };    
   useEffect(()=>{
     if (state.isDark) {
       document.body.style.backgroundColor="#313334"
