@@ -42,18 +42,18 @@ const HmDivList = ({head,type}) => {
         {
             type===PROJECT?<ul className="hm-list-div-list">
             {
-                state.map(i=>{
-                    return <li className="hm-list-div-list-item">
-                        <ProjectCard data={i}/>
+                state.map((e,i)=>{
+                    return <li className="hm-list-div-list-item" key={i}>
+                        <ProjectCard data={e}/>
                     </li>
                 })
             }
             
         </ul>:<ul className="hm-list-div-list">
             {
-                state.map(i=>{
-                    return <li className="hm-list-div-list-item">
-                        <BlogCard data={i}/>
+                state.map((e,i)=>{
+                    return <li className="hm-list-div-list-item" key={i}>
+                        <BlogCard data={e}/>
                     </li>
                 })
             }
