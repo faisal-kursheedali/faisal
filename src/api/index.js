@@ -3,9 +3,6 @@ const postUserAction = async (userAction) => {
     fetch("http://localhost:3000/api/action", {
         body: JSON.stringify(userAction),
         method: "POST",
-        headers: {
-            "Content-Type": 'application/json'
-        },
         mode: 'no-cors'
     })
 }
