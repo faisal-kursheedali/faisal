@@ -3,11 +3,14 @@ import { Footer, Nav, Sidenav } from './component'
 import AllRoutes from './routes'
 import "./main.css"
 import { useDispatch, useSelector } from 'react-redux'
-import { setSideNav } from './app/feature/state'
+import { setSideNav, setUserAboutmeActon, setUserHomeActon } from './app/feature/state'
+import { useLocation } from 'react-router-dom'
 
 const Main = () => {
     const dispatch=useDispatch();
-    const state=useSelector(store=>store.state)
+    const state=useSelector(store=>store.state);
+    const location = useLocation();
+    const dateTime = new Date();
   return (
     <div className="main-conatiner">
         <div className="main-nav">
@@ -25,7 +28,11 @@ const Main = () => {
 
             </div>
             <div className="main-content-btn">
-            <button className="main-content-btn-primary" >
+            <button className="main-content-btn-primary" onClick={()=>{
+                location.pathname === "/"?
+                dispatch(setUserHomeActon({path: location.pathname, dateTime: dateTime.toISOString(), action: "my-resume-btn", desc: `clicked my resume button`})):
+                dispatch(setUserAboutmeActon({path: location.pathname, dateTime: dateTime.toISOString(), action: "my-resume-btn", desc: `clicked my resume button`}));
+              }}>
                 <a href={`${window.location.origin}/cv.pdf`}  className="main-content-btn-primary-link">
                 My Resume
                 </a>

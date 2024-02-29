@@ -31,6 +31,9 @@ const StateSlice=createSlice({
         setUserBlogActon:(state,action)=>{
             state.userAction.blog= [...state.userAction.blog, action.payload]
         },
+        setUserAboutmeActon:(state,action)=>{
+            state.userAction.aboutme= [...state.userAction.aboutme, action.payload]
+        },
         setUserNavbarActon:(state,action)=>{
             state.userAction.navbar= [...state.userAction.navbar, action.payload]
         },
@@ -40,5 +43,5 @@ const StateSlice=createSlice({
     }
 })
 
-export const {setDarkmode,setSideNav, setUserBlogActon, setUserFooterActon, setUserHomeActon, setUserNavbarActon, setUserProjectActon}=StateSlice.actions;
+export const {setDarkmode,setSideNav, setUserBlogActon, setUserFooterActon, setUserHomeActon, setUserNavbarActon, setUserProjectActon, setUserAboutmeActon}=StateSlice.actions;
 export default StateSlice.reducer;

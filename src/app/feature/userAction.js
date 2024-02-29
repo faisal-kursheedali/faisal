@@ -3,7 +3,8 @@ const userAction = {
     footer:[],
     home:[],
     project:[],
-    blog:[]
+    blog:[],
+    aboutme:[]
 }
 
 export default userAction;
