@@ -1,5 +1,5 @@
 import { socket } from "../App";
-import { clearUserAction } from "../app/feature/state";
+import { clearUserAction, clearUserNavigation } from "../app/feature/state";
 
 const dateTime = new Date().toISOString();
 
@@ -26,4 +26,17 @@ const sendUser = () => {
   });
 };
 
-export { sendUserActions, sendUser };
+const sendUserNavigation = (state, dispatch) => {
+  if (state.userNavigation.length > 0) {
+    socket.emit("userNavigation", {
+      data: JSON.stringify({
+        navigation: state.userNavigation,
+        userEntry: state.userEntry,
+      }),
+      date: dateTime,
+    });
+    dispatch(clearUserNavigation());
+  }
+};
+
+export { sendUserActions, sendUser, sendUserNavigation };

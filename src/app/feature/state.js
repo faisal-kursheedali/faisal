@@ -7,6 +7,8 @@ const initialState = {
   projectData,
   blogData,
   userAction,
+  userNavigation: [],
+  userEntry: "",
   sideNav: false,
   darkmode: false,
 };
@@ -43,6 +45,15 @@ const StateSlice = createSlice({
     clearUserAction: (state, action) => {
       state.userAction = initialState.userAction;
     },
+    setUserNavigation: (state, action) => {
+      state.userNavigation = [...state.userNavigation, action.payload];
+    },
+    clearUserNavigation: (state, action) => {
+      state.userNavigation = [];
+    },
+    setUserEntry: (state, action) => {
+      state.userEntry = action.payload;
+    },
   },
 });
 
@@ -57,5 +68,8 @@ export const {
   setUserAboutAction,
   clearUserAction,
   setUserActionOnload,
+  setUserNavigation,
+  clearUserNavigation,
+  setUserEntry,
 } = StateSlice.actions;
 export default StateSlice.reducer;
