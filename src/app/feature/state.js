@@ -31,8 +31,8 @@ const StateSlice = createSlice({
     setUserBlogActon: (state, action) => {
       state.userAction.blog = [...state.userAction.blog, action.payload];
     },
-    setUserAboutmeActon: (state, action) => {
-      state.userAction.aboutme = [...state.userAction.aboutme, action.payload];
+    setUserAboutAction: (state, action) => {
+      state.userAction.about = [...state.userAction.about, action.payload];
     },
     setUserNavbarActon: (state, action) => {
       state.userAction.navbar = [...state.userAction.navbar, action.payload];
@@ -54,7 +54,7 @@ export const {
   setUserHomeActon,
   setUserNavbarActon,
   setUserProjectActon,
-  setUserAboutmeActon,
+  setUserAboutAction,
   clearUserAction,
   setUserActionOnload,
 } = StateSlice.actions;

@@ -9,7 +9,7 @@ const sendUserActions = (state, dispatch) => {
     state.userAction.home.length > 0 ||
     state.userAction.project.length > 0 ||
     state.userAction.blog.length > 0 ||
-    state.userAction.aboutme.length > 0 ||
+    state.userAction.about.length > 0 ||
     state.userAction.footer.length > 0
   ) {
     socket.emit("userAction", {
