@@ -8,7 +8,7 @@ import io from "socket.io-client";
 import { sendUser, sendUserActions, sendUserNavigation } from "./api";
 import { useLocation } from "react-router-dom";
 import { setUserEntry, setUserNavigation } from "./app/feature/state";
-export const socket = io("http://localhost:3000/");
+export const socket = io("https://faisal-portfolio.onrender.com");
 
 function App() {
   const state = useSelector((store) => store.state);
