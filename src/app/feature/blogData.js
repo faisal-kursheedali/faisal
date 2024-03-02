@@ -1,6 +1,6 @@
 
 import {v4 as uuid} from "uuid"
-export default [
+const blogs = [
     {
      _id:uuid(),
      head:"How to start web development",
@@ -28,4 +28,6 @@ export default [
      img:`${window.location.origin}/assets/blog3.png`,
     
     },
-] 
+];
+
+export default blogs;

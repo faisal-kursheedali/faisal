@@ -1,7 +1,7 @@
 import React from 'react'
 import "./home.css"
 
-import { CenterTxt, CmnHeader,  HmDivList, Para, Quote } from '../../component'
+import { CenterTxt, CmnHeader,  HmDivList, /*Para,*/ Quote } from '../../component'
 import { BLOG, PROJECT } from '../../app/constant'
 
 const Home = () => {
