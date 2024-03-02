@@ -14,6 +14,7 @@ function App() {
 
   window.onload = () => {
     sendUser();
+    console.log("👋Hello developers 🧑‍💻");
   };
   document.onvisibilitychange = () => {
     sendUserActions(state, dispatch);
