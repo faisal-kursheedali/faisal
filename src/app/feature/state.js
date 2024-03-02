@@ -22,22 +22,22 @@ const StateSlice = createSlice({
     },
 
     // user actions
-    setUserHomeActon: (state, action) => {
+    setUserHomeAction: (state, action) => {
       state.userAction.home = [...state.userAction.home, action.payload];
     },
-    setUserProjectActon: (state, action) => {
+    setUserProjectAction: (state, action) => {
       state.userAction.project = [...state.userAction.project, action.payload];
     },
-    setUserBlogActon: (state, action) => {
+    setUserBlogAction: (state, action) => {
       state.userAction.blog = [...state.userAction.blog, action.payload];
     },
     setUserAboutAction: (state, action) => {
       state.userAction.about = [...state.userAction.about, action.payload];
     },
-    setUserNavbarActon: (state, action) => {
+    setUserNavbarAction: (state, action) => {
       state.userAction.navbar = [...state.userAction.navbar, action.payload];
     },
-    setUserFooterActon: (state, action) => {
+    setUserFooterAction: (state, action) => {
       state.userAction.footer = [...state.userAction.footer, action.payload];
     },
     clearUserAction: (state, action) => {
@@ -49,11 +49,11 @@ const StateSlice = createSlice({
 export const {
   setDarkmode,
   setSideNav,
-  setUserBlogActon,
-  setUserFooterActon,
-  setUserHomeActon,
-  setUserNavbarActon,
-  setUserProjectActon,
+  setUserBlogAction,
+  setUserFooterAction,
+  setUserHomeAction,
+  setUserNavbarAction,
+  setUserProjectAction,
   setUserAboutAction,
   clearUserAction,
   setUserActionOnload,

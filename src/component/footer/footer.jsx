@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Brand from "../brand/barnd";
 import "./footer.css";
 import { useDispatch } from "react-redux";
-import { setUserFooterActon } from "../../app/feature/state";
+import { setUserFooterAction } from "../../app/feature/state";
 const Footer = () => {
   const location = useLocation();
   const dateTime = new Date().toISOString();
@@ -29,7 +29,7 @@ const Footer = () => {
                   className="footer-list-item-link"
                   onClick={() => {
                     dispatch(
-                      setUserFooterActon({
+                      setUserFooterAction({
                         path: location.pathname,
                         dateTime: dateTime,
                         action: "home-link",
@@ -47,7 +47,7 @@ const Footer = () => {
                   className="footer-list-item-link"
                   onClick={() => {
                     dispatch(
-                      setUserFooterActon({
+                      setUserFooterAction({
                         path: location.pathname,
                         dateTime: dateTime,
                         action: "project-link",
@@ -65,7 +65,7 @@ const Footer = () => {
                   className="footer-list-item-link"
                   onClick={() => {
                     dispatch(
-                      setUserFooterActon({
+                      setUserFooterAction({
                         path: location.pathname,
                         dateTime: dateTime,
                         action: "blog-link",
@@ -83,7 +83,7 @@ const Footer = () => {
                   className="footer-list-item-link"
                   onClick={() => {
                     dispatch(
-                      setUserFooterActon({
+                      setUserFooterAction({
                         path: location.pathname,
                         dateTime: dateTime,
                         action: "blog-link",
@@ -124,7 +124,7 @@ const Footer = () => {
                 className="footer-list-item"
                 onClick={() => {
                   dispatch(
-                    setUserFooterActon({
+                    setUserFooterAction({
                       path: location.pathname,
                       dateTime: dateTime,
                       action: "media-twitter-link",
@@ -144,7 +144,7 @@ const Footer = () => {
                 className="footer-list-item"
                 onClick={() => {
                   dispatch(
-                    setUserFooterActon({
+                    setUserFooterAction({
                       path: location.pathname,
                       dateTime: dateTime,
                       action: "media-github-link",
@@ -164,7 +164,7 @@ const Footer = () => {
                 className="footer-list-item"
                 onClick={() => {
                   dispatch(
-                    setUserFooterActon({
+                    setUserFooterAction({
                       path: location.pathname,
                       dateTime: dateTime,
                       action: "media-linkedin-link",
@@ -184,7 +184,7 @@ const Footer = () => {
                 className="footer-list-item"
                 onClick={() => {
                   dispatch(
-                    setUserFooterActon({
+                    setUserFooterAction({
                       path: location.pathname,
                       dateTime: dateTime,
                       action: "media-mail-link",
@@ -204,7 +204,7 @@ const Footer = () => {
                 className="footer-list-item"
                 onClick={() => {
                   dispatch(
-                    setUserFooterActon({
+                    setUserFooterAction({
                       path: location.pathname,
                       dateTime: dateTime,
                       action: "media-discord-link",
@@ -224,7 +224,7 @@ const Footer = () => {
                 className="footer-list-item"
                 onClick={() => {
                   dispatch(
-                    setUserFooterActon({
+                    setUserFooterAction({
                       path: location.pathname,
                       dateTime: dateTime,
                       action: "media-instagram-link",
@@ -249,7 +249,7 @@ const Footer = () => {
                 className="footer-list-item"
                 onClick={() => {
                   dispatch(
-                    setUserFooterActon({
+                    setUserFooterAction({
                       path: location.pathname,
                       dateTime: dateTime,
                       action: "project-promodoro-link",
@@ -266,7 +266,7 @@ const Footer = () => {
                 className="footer-list-item"
                 onClick={() => {
                   dispatch(
-                    setUserFooterActon({
+                    setUserFooterAction({
                       path: location.pathname,
                       dateTime: dateTime,
                       action: "project-bui-link",
@@ -286,7 +286,7 @@ const Footer = () => {
                 className="footer-list-item"
                 onClick={() => {
                   dispatch(
-                    setUserFooterActon({
+                    setUserFooterAction({
                       path: location.pathname,
                       dateTime: dateTime,
                       action: "project-interior-link",
@@ -306,7 +306,7 @@ const Footer = () => {
                 className="footer-list-item"
                 onClick={() => {
                   dispatch(
-                    setUserFooterActon({
+                    setUserFooterAction({
                       path: location.pathname,
                       dateTime: dateTime,
                       action: "project-mytube-link",
@@ -326,7 +326,7 @@ const Footer = () => {
                 className="footer-list-item"
                 onClick={() => {
                   dispatch(
-                    setUserFooterActon({
+                    setUserFooterAction({
                       path: location.pathname,
                       dateTime: dateTime,
                       action: "project-myTab-link",
@@ -349,7 +349,7 @@ const Footer = () => {
           className="footer-end"
           onClick={() => {
             dispatch(
-              setUserFooterActon({
+              setUserFooterAction({
                 path: location.pathname,
                 dateTime: dateTime,
                 action: "portfolio-github-link",

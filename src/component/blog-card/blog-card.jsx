@@ -1,40 +1,44 @@
-import React from 'react'
-import "./blog-card.css"
-import { FaBook } from "react-icons/fa"
+import React from "react";
+import "./blog-card.css";
+import { FaBook } from "react-icons/fa";
 // import { DiCss3 } from "react-icons/di"
 // import {IoLogoJavascript} from "react-icons/io"
 // import { FaReact } from "react-icons/fa"
 // import { GiJesterHat } from "react-icons/gi"
 // import { SiReactrouter, SiRedux, SiTypescript, SiWebpack, SiJavascript } from "react-icons/si"
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { setUserBlogAction } from "../../app/feature/state";
 
 const BlogCard = ({ data }) => {
-  
-  const state=useSelector(s=>s.state)
+  const location = useLocation();
+  const dateTime = new Date();
+  const dispatch = useDispatch();
+  const state = useSelector((s) => s.state);
   // const [detail, setDetail] = useState(false)
   // const [hover, setHover] = useState(false)
 
   return (
-    <div className="blog-card-container" style={state.isDark?{backgroundColor:"white",color:"black"}:{backgroundColor:"initial",color:"initial"}} >
+    <div
+      className="blog-card-container"
+      style={
+        state.isDark
+          ? { backgroundColor: "white", color: "black" }
+          : { backgroundColor: "initial", color: "initial" }
+      }
+    >
       <div className="blog-card-img-container">
-        <img src={data.img} alt="" className='blog-card-img' />
+        <img src={data.img} alt="" className="blog-card-img" />
         {/* {
           hover?:<img src={data.logoImg} alt="" className='blog-card-img' />
         } */}
         {/* <iframe src="https://mytube-webapp.netlify.app/" frameborder="0"div className="blog-card-ifram"></iframe> */}
-
       </div>
       <div className="blog-card-content">
-        <div className="blog-card-head">
-          {data.head}
-        </div>
-        {data.tag?<div className="blog-card-tag">
-          {data.tag}
-        </div>:""}
-        
-        <div className="blog-card-sub">
-          {data.sub}
-        </div>
+        <div className="blog-card-head">{data.head}</div>
+        {data.tag ? <div className="blog-card-tag">{data.tag}</div> : ""}
+
+        <div className="blog-card-sub">{data.sub}</div>
         {/* {
           detail?<div className="blog-card-detail">
             {
@@ -64,16 +68,28 @@ const BlogCard = ({ data }) => {
         </div>
       </div> */}
         <div className="blog-card-link-container">
-          <div className="blog-card-read-more-link">
-            <a href={data.link} className="blog-card-link"><FaBook /> <span className="blog-card-link-txt">Read more</span></a>
+          <div
+            className="blog-card-read-more-link"
+            onClick={() => {
+              dispatch(
+                setUserBlogAction({
+                  tittle: data.head,
+                  path: location.pathname,
+                  dateTime: dateTime.toISOString(),
+                  action: "read-more-button",
+                  desc: "user clicked on read more button",
+                })
+              );
+            }}
+          >
+            <a href={data.link} className="blog-card-link">
+              <FaBook /> <span className="blog-card-link-txt">Read more</span>
+            </a>
           </div>
         </div>
       </div>
-
-
     </div>
+  );
+};
 
-  )
-}
-
-export default BlogCard
+export default BlogCard;

@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   setSideNav,
   setUserAboutAction,
-  setUserHomeActon,
+  setUserHomeAction,
 } from "./app/feature/state";
 import { useLocation } from "react-router-dom";
 
@@ -39,7 +39,7 @@ const Main = () => {
             onClick={() => {
               location.pathname === "/"
                 ? dispatch(
-                    setUserHomeActon({
+                    setUserHomeAction({
                       path: location.pathname,
                       dateTime: dateTime.toISOString(),
                       action: "my-resume-btn",

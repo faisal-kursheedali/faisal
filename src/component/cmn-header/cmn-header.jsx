@@ -11,7 +11,7 @@ import {
 import { MdEmail } from "react-icons/md";
 import { BsDiscord } from "react-icons/bs";
 import { useLocation, useNavigate } from "react-router-dom";
-import { setUserAboutAction, setUserHomeActon } from "../../app/feature/state";
+import { setUserAboutAction, setUserHomeAction } from "../../app/feature/state";
 import { useDispatch } from "react-redux";
 
 const CmnHeader = ({
@@ -44,7 +44,7 @@ const CmnHeader = ({
             onClick={() => {
               location.pathname === "/"
                 ? dispatch(
-                    setUserHomeActon({
+                    setUserHomeAction({
                       path: location.pathname,
                       dateTime: dateTime.toISOString(),
                       action: "my-resume-btn",
@@ -73,7 +73,7 @@ const CmnHeader = ({
             onClick={() => {
               location.pathname === "/"
                 ? dispatch(
-                    setUserHomeActon({
+                    setUserHomeAction({
                       path: location.pathname,
                       dateTime: dateTime.toISOString(),
                       action: "project-btn",
@@ -101,7 +101,7 @@ const CmnHeader = ({
               onClick={() => {
                 location.pathname === "/"
                   ? dispatch(
-                      setUserHomeActon({
+                      setUserHomeAction({
                         path: location.pathname,
                         dateTime: dateTime.toISOString(),
                         action: "media-github-btn",
@@ -130,7 +130,7 @@ const CmnHeader = ({
               onClick={() => {
                 location.pathname === "/"
                   ? dispatch(
-                      setUserHomeActon({
+                      setUserHomeAction({
                         path: location.pathname,
                         dateTime: dateTime.toISOString(),
                         action: "media-linkedin-btn",
@@ -159,7 +159,7 @@ const CmnHeader = ({
               onClick={() => {
                 location.pathname === "/"
                   ? dispatch(
-                      setUserHomeActon({
+                      setUserHomeAction({
                         path: location.pathname,
                         dateTime: dateTime.toISOString(),
                         action: "media-twitter-btn",
@@ -188,7 +188,7 @@ const CmnHeader = ({
               onClick={() => {
                 location.pathname === "/"
                   ? dispatch(
-                      setUserHomeActon({
+                      setUserHomeAction({
                         path: location.pathname,
                         dateTime: dateTime.toISOString(),
                         action: "media-instagram-btn",
@@ -217,7 +217,7 @@ const CmnHeader = ({
               onClick={() => {
                 location.pathname === "/"
                   ? dispatch(
-                      setUserHomeActon({
+                      setUserHomeAction({
                         path: location.pathname,
                         dateTime: dateTime.toISOString(),
                         action: "media-email-btn",
@@ -246,7 +246,7 @@ const CmnHeader = ({
               onClick={() => {
                 location.pathname === "/"
                   ? dispatch(
-                      setUserHomeActon({
+                      setUserHomeAction({
                         path: location.pathname,
                         dateTime: dateTime.toISOString(),
                         action: "media-discord-btn",

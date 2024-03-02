@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   setDarkmode,
   setSideNav,
-  setUserNavbarActon,
+  setUserNavbarAction,
 } from "../../app/feature/state";
 
 const Nav = () => {
@@ -26,7 +26,7 @@ const Nav = () => {
             className="nav-logo-mode"
             onClick={() => {
               dispatch(
-                setUserNavbarActon({
+                setUserNavbarAction({
                   path: location.pathname,
                   dateTime: dateTime.toISOString(),
                   action: "dark-to-light-btn",
@@ -44,7 +44,7 @@ const Nav = () => {
             className="nav-logo-mode"
             onClick={() => {
               dispatch(
-                setUserNavbarActon({
+                setUserNavbarAction({
                   path: location.pathname,
                   dateTime: dateTime.toISOString(),
                   action: "light-to-dark-btn",
@@ -64,7 +64,7 @@ const Nav = () => {
             className="nav-list-item"
             onClick={() => {
               dispatch(
-                setUserNavbarActon({
+                setUserNavbarAction({
                   path: location.pathname,
                   dateTime: dateTime.toISOString(),
                   action: "home-link",
@@ -81,7 +81,7 @@ const Nav = () => {
             className="nav-list-item"
             onClick={() => {
               dispatch(
-                setUserNavbarActon({
+                setUserNavbarAction({
                   path: location.pathname,
                   dateTime: dateTime.toISOString(),
                   action: "project-link",
@@ -98,7 +98,7 @@ const Nav = () => {
             className="nav-list-item"
             onClick={() => {
               dispatch(
-                setUserNavbarActon({
+                setUserNavbarAction({
                   path: location.pathname,
                   dateTime: dateTime.toISOString(),
                   action: "blog-link",
@@ -115,7 +115,7 @@ const Nav = () => {
             className="nav-list-item"
             onClick={() => {
               dispatch(
-                setUserNavbarActon({
+                setUserNavbarAction({
                   path: location.pathname,
                   dateTime: dateTime.toISOString(),
                   action: "aboutme-link",
@@ -133,7 +133,7 @@ const Nav = () => {
           className="nav-menu"
           onClick={() => {
             dispatch(
-              setUserNavbarActon({
+              setUserNavbarAction({
                 path: location.pathname,
                 dateTime: dateTime.toISOString(),
                 action: "menu-btn",
