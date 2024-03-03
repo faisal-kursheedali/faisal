@@ -1,5 +1,9 @@
 import { socket } from "../App";
-import { clearUserAction, clearUserNavigation } from "../app/feature/state";
+import {
+  clearUserAction,
+  clearUserNavigation,
+  setCollectUserData,
+} from "../app/feature/state";
 
 const dateTime = new Date().toISOString();
 
@@ -39,4 +43,13 @@ const sendUserNavigation = (state, dispatch) => {
   }
 };
 
-export { sendUserActions, sendUser, sendUserNavigation };
+const getOptions = (dispatch, { name }) => {
+  socket.emit("getOptions", { name: name }, (data) => {
+    if (data) {
+      console.log(data);
+      dispatch(setCollectUserData(data.boolValue));
+    }
+  });
+};
+
+export { sendUserActions, sendUser, sendUserNavigation, getOptions };
