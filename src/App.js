@@ -5,10 +5,20 @@ import "./App.css";
 import Main from "./main";
 import { useEffect } from "react";
 import io from "socket.io-client";
-import { sendUser, sendUserActions, sendUserNavigation } from "./api";
+import {
+  getOptions,
+  sendUser,
+  sendUserActions,
+  sendUserNavigation,
+} from "./api";
 import { useLocation } from "react-router-dom";
-import { setUserEntry, setUserNavigation } from "./app/feature/state";
-export const socket = io("https://faisal-portfolio.onrender.com");
+import {
+  clearUserAction,
+  clearUserNavigation,
+  setUserEntry,
+  setUserNavigation,
+} from "./app/feature/state";
+export const socket = io("http://localhost:3000/");
 
 function App() {
   const state = useSelector((store) => store.state);
@@ -21,13 +31,19 @@ function App() {
   }, [location]);
 
   window.onload = () => {
+    getOptions(dispatch, { name: "collectUserData" });
     sendUser();
     dispatch(setUserEntry(dateTime));
     console.log("👋Hello developers 🧑‍💻");
   };
   document.onvisibilitychange = () => {
-    sendUserActions(state, dispatch);
-    sendUserNavigation(state, dispatch);
+    if (state.collectUserData) {
+      sendUserActions(state, dispatch);
+      sendUserNavigation(state, dispatch);
+    } else {
+      dispatch(clearUserAction());
+      dispatch(clearUserNavigation());
+    }
   };
 
   useEffect(() => {

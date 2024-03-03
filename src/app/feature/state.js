@@ -11,6 +11,7 @@ const initialState = {
   userEntry: "",
   sideNav: false,
   darkmode: false,
+  collectUserData: true,
 };
 const StateSlice = createSlice({
   name: "state",
@@ -54,6 +55,9 @@ const StateSlice = createSlice({
     setUserEntry: (state, action) => {
       state.userEntry = action.payload;
     },
+    setCollectUserData: (state, action) => {
+      state.collectUserData = action.payload;
+    },
   },
 });
 
@@ -71,5 +75,6 @@ export const {
   setUserNavigation,
   clearUserNavigation,
   setUserEntry,
+  setCollectUserData,
 } = StateSlice.actions;
 export default StateSlice.reducer;
