@@ -11,12 +11,6 @@ import {
   sendUserActions,
   sendUserNavigation,
 } from "./api";
-import {
-  getOptions,
-  sendUser,
-  sendUserActions,
-  sendUserNavigation,
-} from "./api";
 import { useLocation } from "react-router-dom";
 import {
   clearUserAction,
