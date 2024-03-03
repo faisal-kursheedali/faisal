@@ -11,6 +11,12 @@ import {
   sendUserActions,
   sendUserNavigation,
 } from "./api";
+import {
+  getOptions,
+  sendUser,
+  sendUserActions,
+  sendUserNavigation,
+} from "./api";
 import { useLocation } from "react-router-dom";
 import {
   clearUserAction,
@@ -31,6 +37,7 @@ function App() {
   }, [location]);
 
   window.onload = () => {
+    getOptions(dispatch, { name: "collectUserData" });
     getOptions(dispatch, { name: "collectUserData" });
     sendUser();
     dispatch(setUserEntry(dateTime));
