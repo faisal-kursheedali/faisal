@@ -18,7 +18,12 @@ import {
   setUserEntry,
   setUserNavigation,
 } from "./app/feature/state";
-export const socket = io("http://localhost:3000/");
+
+// SOCKE_URL - PRODUCTION
+export const socket = io("https://faisal-portfolio.onrender.com");
+
+// SOCKE_URL - DEVELOPMENT
+// export const socket = io("http://localhost:3000/");
 
 function App() {
   const state = useSelector((store) => store.state);
