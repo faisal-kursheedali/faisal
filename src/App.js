@@ -4,12 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import Main from "./main";
 import { useEffect } from "react";
-// import io from "socket.io-client";
-import // getOptions,
-// sendUser,
-// sendUserActions,
-// sendUserNavigation,
-"./api";
 import { useLocation } from "react-router-dom";
 import {
   clearUserAction,
@@ -17,13 +11,7 @@ import {
   setUserEntry,
   setUserNavigation,
 } from "./app/feature/state";
-import { getOption, onLeave, onLoad } from "./api/rest";
-
-// SOCKE_URL - PRODUCTION
-// export const socket = io("https://faisal-portfolio.onrender.com");
-
-// SOCKE_URL - DEVELOPMENT
-// export const socket = io("http://localhost:3000/");
+import { /* getOption, */ onLeave, onLoad } from "./api/rest";
 
 function App() {
   const state = useSelector((store) => store.state);
@@ -38,19 +26,15 @@ function App() {
     saveUserNavigation();
   }, [location]);
 
-  window.onload = /* async */ () => {
-    /* await */
-    getOption(dispatch, { name: "collectUserData" });
-    // sendUser();
-    /* await */ onLoad(dateTime);
+  window.onload = () => {
+    // getOption(dispatch, { name: "collectUserData" }); -> todo: do this later
+    onLoad(dateTime);
     dispatch(setUserEntry(dateTime));
     console.log("👋Hello developers 🧑‍💻");
   };
   window.onunload = () => {
     if (state.collectUserData) {
-      // sendUserActions(state, dispatch);
       onLeave({ state, dispatch, date: dateTime });
-      // sendUserNavigation(state, dispatch);
     } else {
       dispatch(clearUserAction());
       dispatch(clearUserNavigation());

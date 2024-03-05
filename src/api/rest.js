@@ -5,7 +5,7 @@ import {
 } from "../app/feature/state";
 
 const onLoad = async (date) => {
-  const response = await fetch("http://localhost:3000/api/users/", {
+  const response = await fetch(`${process.env.SERVER_URL}/api/users/`, {
     body: JSON.stringify({ date }),
     method: "POST",
     headers: {
@@ -28,7 +28,7 @@ const onLeave = async ({ state, dispatch, date }) => {
     state.userNavigation.length > 0
   ) {
     navigator.sendBeacon(
-      "http://localhost:3000/api/action",
+      `${process.env.SERVER_URL}/api/action`,
       JSON.stringify({
         data: {
           ...state.userAction,
@@ -39,31 +39,16 @@ const onLeave = async ({ state, dispatch, date }) => {
     );
     dispatch(clearUserAction());
     dispatch(clearUserNavigation());
-    // const response = await fetch("http://localhost:3000/api/action", {
-    //   body: JSON.stringify({
-    //     data: {
-    //       ...state.userAction,
-    //       navigation: state.userNavigation,
-    //       userEntry: state.userEntry,
-    //     },
-    //     date: date,
-    //   }),
-    //   method: "POST",
-    //   headers: { "content-type": "application/json" },
-    //   mode: "no-cors",
-    // }).then((res) => {
-    //   dispatch(clearUserAction());
-    //   dispatch(clearUserNavigation());
-    // });
-    // const data = await response.json();
-    // console.log(data);
   }
 };
 
 const getOption = async (dispatch, { name }) => {
-  const response = await fetch(`http://localhost:3000/api/options/${name}`, {
-    mode: "no-cors",
-  });
+  const response = await fetch(
+    `${process.env.SERVER_URL}/api/options/${name}`,
+    {
+      mode: "no-cors",
+    }
+  );
   const data = await response.json();
   console.log(data);
   if (data) {
