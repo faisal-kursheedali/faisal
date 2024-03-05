@@ -5,7 +5,7 @@ import {
 } from "../app/feature/state";
 
 const SERVER_URL =
-  "https://portfolio-8h1x41o0l-faisals-projects-925fdebb.vercel.app";
+  "https://portfolio-git-dev-faisals-projects-925fdebb.vercel.app/";
 
 const onLoad = async (date) => {
   const response = await fetch(`${SERVER_URL}/api/users/`, {
