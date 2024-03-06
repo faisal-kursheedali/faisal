@@ -4,11 +4,11 @@ import {
   setCollectUserData,
 } from "../app/feature/state";
 
-// const SERVER_URL =
-//   "https://portfolio-git-dev-faisals-projects-925fdebb.vercel.app/";
+const SERVER_URL =
+  "https://portfolio-git-dev-faisals-projects-925fdebb.vercel.app";
 
 const onLoad = async (date) => {
-  const response = await fetch(`${process.env.SERVER_URL}/api/users/`, {
+  const response = await fetch(`${SERVER_URL}/api/users/`, {
     body: JSON.stringify({ date }),
     method: "POST",
     headers: {
@@ -31,7 +31,7 @@ const onLeave = async ({ state, dispatch, date }) => {
     state.userNavigation.length > 0
   ) {
     navigator.sendBeacon(
-      `${process.env.SERVER_URL}/api/action`,
+      `${SERVER_URL}/api/action`,
       JSON.stringify({
         data: {
           ...state.userAction,
@@ -46,12 +46,9 @@ const onLeave = async ({ state, dispatch, date }) => {
 };
 
 const getOption = async (dispatch, { name }) => {
-  const response = await fetch(
-    `${process.env.SERVER_URL}/api/options/${name}`,
-    {
-      mode: "no-cors",
-    }
-  );
+  const response = await fetch(`${SERVER_URL}/api/options/${name}`, {
+    mode: "no-cors",
+  });
   const data = await response.json();
   console.log(data);
   if (data) {
