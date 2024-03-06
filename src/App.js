@@ -19,6 +19,27 @@ function App() {
   const location = useLocation();
   const dateTime = new Date().toISOString();
 
+  useEffect(() => {
+    const handleLoad = () => {
+      onLoad(dateTime);
+      dispatch(setUserEntry(dateTime));
+      console.log("👋Hello developers 🧑‍💻");
+    };
+    const handleUnload = () => {
+      if (state.collectUserData) {
+        onLeave({ state, dispatch, date: dateTime });
+      } else {
+        dispatch(clearUserAction());
+        dispatch(clearUserNavigation());
+      }
+    };
+    window.addEventListener("unload", handleUnload);
+    window.addEventListener("load", handleLoad);
+    return () => {
+      window.removeEventListener("load", handleLoad);
+      window.removeEventListener("unload", handleUnload);
+    };
+  }, []);
   const saveUserNavigation = () =>
     dispatch(setUserNavigation({ path: location.pathname, time: dateTime }));
 
@@ -26,20 +47,20 @@ function App() {
     saveUserNavigation();
   }, [location]);
 
-  window.onload = () => {
-    // getOption(dispatch, { name: "collectUserData" }); -> todo: do this later
-    onLoad(dateTime);
-    dispatch(setUserEntry(dateTime));
-    console.log("👋Hello developers 🧑‍💻");
-  };
-  window.onunload = () => {
-    if (state.collectUserData) {
-      onLeave({ state, dispatch, date: dateTime });
-    } else {
-      dispatch(clearUserAction());
-      dispatch(clearUserNavigation());
-    }
-  };
+  // window.onload = () => {
+  //   // getOption(dispatch, { name: "collectUserData" }); -> todo: do this later
+  //   onLoad(dateTime);
+  //   dispatch(setUserEntry(dateTime));
+  //   console.log("👋Hello developers 🧑‍💻");
+  // };
+  // window.onunload = () => {
+  //   if (state.collectUserData) {
+  //     onLeave({ state, dispatch, date: dateTime });
+  //   } else {
+  //     dispatch(clearUserAction());
+  //     dispatch(clearUserNavigation());
+  //   }
+  // };
 
   useEffect(() => {
     if (state.isDark) {
