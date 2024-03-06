@@ -20,12 +20,14 @@ function App() {
   const dateTime = new Date().toISOString();
 
   useEffect(() => {
-    const handleLoad = () => {
+    const handleLoad = (event) => {
+      event.preventDefault();
       onLoad(dateTime);
       dispatch(setUserEntry(dateTime));
       console.log("👋Hello developers 🧑‍💻");
     };
-    const handleUnload = () => {
+    const handleUnload = (event) => {
+      event.preventDefault();
       if (state.collectUserData) {
         onLeave({ state, dispatch, date: dateTime });
       } else {
@@ -33,8 +35,8 @@ function App() {
         dispatch(clearUserNavigation());
       }
     };
-    window.addEventListener("unload", handleUnload);
-    window.addEventListener("load", handleLoad);
+    window.addEventListener("unload", handleUnload, { capture: true });
+    window.addEventListener("load", handleLoad, { capture: true });
     return () => {
       window.removeEventListener("load", handleLoad);
       window.removeEventListener("unload", handleUnload);
