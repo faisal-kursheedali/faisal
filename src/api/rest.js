@@ -4,8 +4,9 @@ import {
   setCollectUserData,
 } from "../app/feature/state";
 
-const SERVER_URL =
-  "https://portfolio-git-dev-faisals-projects-925fdebb.vercel.app";
+// const SERVER_URL =
+//   "https://portfolio-git-dev-faisals-projects-925fdebb.vercel.app";
+const SERVER_URL = "http://localhost:3000";
 
 const onLoad = async (date) => {
   const response = await fetch(`${SERVER_URL}/api/users/`, {
@@ -16,8 +17,8 @@ const onLoad = async (date) => {
     },
     mode: "no-cors",
   });
-  const data = await response.json();
-  console.log(data);
+  // const data = await response.json();
+  // console.log(data);
 };
 
 const onLeave = async ({ state, dispatch, date }) => {
