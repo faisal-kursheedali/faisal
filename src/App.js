@@ -50,21 +50,6 @@ function App() {
     saveUserNavigation();
   }, [location]);
 
-  // window.onload = () => {
-  //   // getOption(dispatch, { name: "collectUserData" }); -> todo: do this later
-  //   onLoad(dateTime);
-  //   dispatch(setUserEntry(dateTime));
-  //   console.log("👋Hello developers 🧑‍💻");
-  // };
-  // window.onunload = () => {
-  //   if (state.collectUserData) {
-  //     onLeave({ state, dispatch, date: dateTime });
-  //   } else {
-  //     dispatch(clearUserAction());
-  //     dispatch(clearUserNavigation());
-  //   }
-  // };
-
   useEffect(() => {
     if (state.isDark) {
       document.body.style.backgroundColor = "#313334";

@@ -14,12 +14,8 @@ const onLoad = async (date) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      // "Access-Control-Allow-Origin": "*",
     },
-    // mode: "no-cors",
   });
-  // const data = await response.json();
-  // console.log(data);
 };
 
 const onLeave = async ({ state, dispatch, date }) => {
