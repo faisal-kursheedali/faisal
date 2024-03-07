@@ -14,7 +14,7 @@ const onLoad = async (date) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
+      // "Access-Control-Allow-Origin": "*",
     },
     // mode: "no-cors",
   });
@@ -49,7 +49,7 @@ const onLeave = async ({ state, dispatch, date }) => {
 
 const getOption = async (dispatch, { name }) => {
   const response = await fetch(`${SERVER_URL}/api/options/${name}`, {
-    mode: "no-cors",
+    // mode: "no-cors",
   });
   const data = await response.json();
   console.log(data);

@@ -36,9 +36,9 @@ function App() {
       }
     };
     window.addEventListener("unload", handleUnload, { capture: true });
-    window.addEventListener("load", handleLoad, { capture: true });
+    // window.addEventListener("load", handleLoad, { capture: true });
     return () => {
-      window.removeEventListener("load", handleLoad);
+      // window.removeEventListener("load", handleLoad);
       window.removeEventListener("unload", handleUnload);
     };
   }, []);
