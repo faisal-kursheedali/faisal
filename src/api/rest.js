@@ -5,7 +5,7 @@ import {
 } from "../app/feature/state";
 
 const SERVER_URL =
-  "https://www.portfolio-git-dev-faisals-projects-925fdebb.vercel.app";
+  "https://portfolio-git-dev-faisals-projects-925fdebb.vercel.app";
 // const SERVER_URL = "http://localhost:3000";
 
 const onLoad = async (date) => {
