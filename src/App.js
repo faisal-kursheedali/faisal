@@ -35,11 +35,11 @@ function App() {
         dispatch(clearUserNavigation());
       }
     };
-    window.addEventListener("unload", handleUnload, { capture: true });
+    window.addEventListener("beforeunload", handleUnload, { capture: true });
     window.addEventListener("load", handleLoad, { capture: true });
     return () => {
       window.removeEventListener("load", handleLoad);
-      window.removeEventListener("unload", handleUnload);
+      window.removeEventListener("beforeunload", handleUnload);
     };
   }, []);
   const saveUserNavigation = () =>
