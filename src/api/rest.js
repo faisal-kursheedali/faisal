@@ -4,8 +4,8 @@ import {
   setCollectUserData,
 } from "../app/feature/state";
 
-const SERVER_URL = "https://faisal-backend.vercel.app";
-// const SERVER_URL = "http://localhost:3000";
+// const SERVER_URL = "https://faisal-backend.vercel.app";
+const SERVER_URL = "http://localhost:3000";
 
 const onLoad = async (date) => {
   const response = await fetch(`${SERVER_URL}/api/users`, {
@@ -27,16 +27,15 @@ const onLeave = async ({ state, dispatch, date }) => {
     state.userAction.footer.length > 0 ||
     state.userNavigation.length > 0
   ) {
-    navigator.sendBeacon(
-      `${SERVER_URL}/api/action`,
-      JSON.stringify({
-        data: {
-          ...state.userAction,
-          navigation: state.userNavigation,
-          userEntry: state.userEntry,
-        },
-      })
-    );
+    const value = JSON.stringify({
+      data: {
+        ...state.userAction,
+        navigation: state.userNavigation,
+        userEntry: state.userEntry,
+      },
+      date,
+    });
+    navigator.sendBeacon(`${SERVER_URL}/api/actions`, value);
     dispatch(clearUserAction());
     dispatch(clearUserNavigation());
   }
@@ -46,7 +45,7 @@ const getOption = async (dispatch, { name }) => {
   const response = await fetch(`${SERVER_URL}/api/options/${name}`);
   const data = await response.json();
   if (data) {
-    dispatch(setCollectUserData(data.boolValue));
+    dispatch(setCollectUserData(data.data.boolValue));
   }
 };
 
