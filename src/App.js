@@ -36,11 +36,13 @@ function App() {
         dispatch(clearUserNavigation());
       }
     };
-    window.addEventListener("onunload", handleUnload, { capture: true });
+    window.addEventListener("onvisibilitychange", handleUnload, {
+      capture: true,
+    });
     window.addEventListener("load", handleLoad, { capture: true });
     return () => {
       window.removeEventListener("load", handleLoad);
-      window.removeEventListener("onunload", handleUnload);
+      window.removeEventListener("onvisibilitychange", handleUnload);
     };
   }, []);
   const saveUserNavigation = () =>
