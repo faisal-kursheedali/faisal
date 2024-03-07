@@ -29,6 +29,7 @@ function App() {
     };
     const handleUnload = (event) => {
       event.preventDefault();
+      console.log(state.collectUserData);
       if (state.collectUserData) {
         onLeave({ state, dispatch, date: dateTime });
       } else {
