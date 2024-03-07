@@ -11,7 +11,7 @@ import {
   setUserEntry,
   setUserNavigation,
 } from "./app/feature/state";
-import { /* getOption, */ onLeave, onLoad } from "./api/rest";
+import { getOption, onLeave, onLoad } from "./api/rest";
 
 function App() {
   const state = useSelector((store) => store.state);
@@ -22,6 +22,7 @@ function App() {
   useEffect(() => {
     const handleLoad = (event) => {
       event.preventDefault();
+      getOption(dispatch, { name: "collectUserData" });
       onLoad(dateTime);
       dispatch(setUserEntry(dateTime));
       console.log("👋Hello developers 🧑‍💻");
@@ -35,11 +36,11 @@ function App() {
         dispatch(clearUserNavigation());
       }
     };
-    window.addEventListener("beforeunload", handleUnload, { capture: true });
+    window.addEventListener("onunload", handleUnload, { capture: true });
     window.addEventListener("load", handleLoad, { capture: true });
     return () => {
       window.removeEventListener("load", handleLoad);
-      window.removeEventListener("beforeunload", handleUnload);
+      window.removeEventListener("onunload", handleUnload);
     };
   }, []);
   const saveUserNavigation = () =>
