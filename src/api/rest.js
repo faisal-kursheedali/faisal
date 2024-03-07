@@ -16,7 +16,7 @@ const onLoad = async (date) => {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
     },
-    mode: "no-cors",
+    // mode: "no-cors",
   });
   // const data = await response.json();
   // console.log(data);
