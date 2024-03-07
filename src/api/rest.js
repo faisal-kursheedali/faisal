@@ -4,8 +4,8 @@ import {
   setCollectUserData,
 } from "../app/feature/state";
 
-// const SERVER_URL = "https://faisal-backend.vercel.app";
-const SERVER_URL = "http://localhost:3000";
+const SERVER_URL = "https://faisal-backend.vercel.app";
+// const SERVER_URL = "http://localhost:3000";
 
 const onLoad = async (date) => {
   const response = await fetch(`${SERVER_URL}/api/users`, {
