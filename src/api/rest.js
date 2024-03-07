@@ -6,10 +6,10 @@ import {
 
 // const SERVER_URL =
 //   "https://portfolio-git-dev-faisals-projects-925fdebb.vercel.app";
-const SERVER_URL = "http://localhost:3000";
+const SERVER_URL = "http://www.localhost:3000";
 
 const onLoad = async (date) => {
-  const response = await fetch(`${SERVER_URL}/api/users/`, {
+  const response = await fetch(`${SERVER_URL}/api/users`, {
     body: JSON.stringify({ date }),
     method: "POST",
     headers: {
