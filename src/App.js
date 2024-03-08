@@ -27,29 +27,9 @@ function App() {
       dispatch(setUserEntry(dateTime));
       console.log("👋Hello developers 🧑‍💻");
     };
-    // const handleUnload = (event) => {
-    //   if (document.visibilityState === "hidden") {
-    //     // event.preventDefault();
-    //     console.log(state.userAction);
-    //     if (state.collectUserData) {
-    //       onLeave({ state, dispatch, date: dateTime });
-    //     } else {
-    //       dispatch(clearUserAction());
-    //       dispatch(clearUserNavigation());
-    //     }
-    //   }
-    // };
     window.addEventListener("load", handleLoad, { capture: true });
-    // document.addEventListener("visibilitychange", handleUnload, {
-    //   capture: true,
-    // });
-    // window.addEventListener("unload", handleUnload, {
-    //   capture: true,
-    // });
     return () => {
       window.removeEventListener("load", handleLoad);
-      // document.removeEventListener("visibilitychange", handleUnload);
-      // window.removeEventListener("unload", handleUnload);
     };
   }, []);
   document.onvisibilitychange = () => {
