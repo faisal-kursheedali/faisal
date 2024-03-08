@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 import {
   clearUserAction,
   clearUserNavigation,
-  setUserEntry,
+  // setUserEntry,
   setUserNavigation,
 } from "./app/feature/state";
 import { getOption, onLeave, onLoad } from "./api/rest";
@@ -35,7 +35,7 @@ function App() {
   window.onload = () => {
     getOption(dispatch, { name: "collectUserData" });
     onLoad(dateTime);
-    dispatch(setUserEntry(dateTime));
+    // dispatch(setUserEntry(dateTime));
     console.log("👋Hello developers 🧑‍💻");
   };
   document.onvisibilitychange = () => {

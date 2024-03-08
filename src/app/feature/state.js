@@ -8,7 +8,7 @@ const initialState = {
   blogData,
   userAction,
   userNavigation: [],
-  userEntry: "",
+  // userEntry: "",
   sideNav: false,
   darkmode: false,
   collectUserData: true,
@@ -52,9 +52,9 @@ const StateSlice = createSlice({
     clearUserNavigation: (state, action) => {
       state.userNavigation = [];
     },
-    setUserEntry: (state, action) => {
-      state.userEntry = action.payload;
-    },
+    // setUserEntry: (state, action) => {
+    //   state.userEntry = action.payload;
+    // },
     setCollectUserData: (state, action) => {
       state.collectUserData = action.payload;
     },
@@ -74,7 +74,7 @@ export const {
   setUserActionOnload,
   setUserNavigation,
   clearUserNavigation,
-  setUserEntry,
+  // setUserEntry,
   setCollectUserData,
 } = StateSlice.actions;
 export default StateSlice.reducer;

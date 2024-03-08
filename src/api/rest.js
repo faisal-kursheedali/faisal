@@ -31,7 +31,7 @@ const onLeave = async ({ state, dispatch, date }) => {
       data: {
         ...state.userAction,
         navigation: state.userNavigation,
-        userEntry: state.userEntry,
+        // userEntry: state.userEntry,
       },
       date,
     });
