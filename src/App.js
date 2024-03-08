@@ -19,19 +19,25 @@ function App() {
   const location = useLocation();
   const dateTime = new Date().toISOString();
 
-  useEffect(() => {
-    const handleLoad = (event) => {
-      event.preventDefault();
-      getOption(dispatch, { name: "collectUserData" });
-      onLoad(dateTime);
-      dispatch(setUserEntry(dateTime));
-      console.log("👋Hello developers 🧑‍💻");
-    };
-    window.addEventListener("load", handleLoad, { capture: true });
-    return () => {
-      window.removeEventListener("load", handleLoad);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleLoad = (event) => {
+  //     event.preventDefault();
+  //     getOption(dispatch, { name: "collectUserData" });
+  //     onLoad(dateTime);
+  //     dispatch(setUserEntry(dateTime));
+  //     console.log("👋Hello developers 🧑‍💻");
+  //   };
+  //   window.addEventListener("load", handleLoad, { capture: true });
+  //   return () => {
+  //     window.removeEventListener("load", handleLoad);
+  //   };
+  // }, []);
+  window.onload = () => {
+    getOption(dispatch, { name: "collectUserData" });
+    onLoad(dateTime);
+    dispatch(setUserEntry(dateTime));
+    console.log("👋Hello developers 🧑‍💻");
+  };
   document.onvisibilitychange = () => {
     if (state.collectUserData) {
       onLeave({ state, dispatch, date: dateTime });
