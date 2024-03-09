@@ -34,7 +34,11 @@ const Admin = () => {
                       {Object.values(item).map((val, index) => {
                         // console.log(val);
                         // console.log(index);
-                        return <td key={index}>{val}</td>;
+                        return (
+                          <td key={index}>
+                            {typeof val === "boolean" ? val.toString() : val}
+                          </td>
+                        );
                       })}
                     </tr>
                   ))}
@@ -160,7 +164,9 @@ const Admin = () => {
                   {data.map((item, index) => (
                     <tr key={index}>
                       {Object.values(item).map((val, index) => (
-                        <td key={index}>{val}</td>
+                        <td key={index}>
+                          {typeof val === "boolean" ? val.toString() : val}
+                        </td>
                       ))}
                     </tr>
                   ))}
@@ -178,7 +184,9 @@ const Admin = () => {
                   </tr>
                   <tr>
                     {Object.values(data).map((val, index) => (
-                      <td key={index}>{val}</td>
+                      <td key={index}>
+                        {typeof val === "boolean" ? val.toString() : val}
+                      </td>
                     ))}
                   </tr>
                 </tbody>
