@@ -76,39 +76,60 @@ const Admin = () => {
         <input
           type="radio"
           name="userSelect"
+          value={"allUserActions"}
+          onChange={(e) => {
+            setData(null);
+            setSelect(e.target.value);
+          }}
+        />
+        Get all users actions by time(hour)
+        <input
+          type="radio"
+          name="userSelect"
           value={"userActions"}
           onChange={(e) => {
             setData(null);
             setSelect(e.target.value);
           }}
         />
-        Get user action by id and hour
+        Get user action by id and time(hour)
         <br />
         <input
-          type="text"
+          type="number"
           placeholder="id"
           value={id}
           onChange={(e) => setId(e.target.value)}
         />
         <input
-          type="text"
+          type="number"
           placeholder="hour"
           value={hour}
           onChange={(e) => setHour(e.target.value)}
         />
         <br />
+        <small>id !== '' | null | 0</small>
+        <br />
+        <small>hour === null | '' | 0 make it hour = 24</small>
+        <br />
         <br />
         <button
           onClick={async () => {
             if (select === "userActions") {
-              if (id !== "") {
+              if (id !== "" || id !== null || id !== 0) {
+                (hour === null || hour === "" || hour === 0) ?? setHour(24);
                 const res = await fetch(`${url}/${select}/${id}?hour=${hour}`);
                 const json = await res.json();
                 setData(null);
                 setData(json);
               }
+            } else if (select === "allUserActions") {
+              (hour === null || hour === "" || hour === 0) ?? setHour(24);
+              const res = await fetch(`${url}/${select}?hour=${hour}`);
+              const json = await res.json();
+              setData(null);
+              setData(json);
             } else if (select === "user") {
-              if (id !== "") {
+              if (id !== "" || id !== null || id !== 0) {
                 const res = await fetch(`${url}/${select}/${id}`);
                 const json = await res.json();
                 setData(null);
@@ -126,7 +147,7 @@ const Admin = () => {
         </button>
       </ul>
       {data !== null ? (
-        select !== "userActions" ? (
+        select !== "userActions" && select !== "allUserActions" ? (
           Array.isArray(data) ? (
             <>
               <table>
