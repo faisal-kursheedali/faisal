@@ -1,0 +1,11 @@
+table {
+  margin: 0 auto;
+  display: block;
+}
+table tr td,
+table tr th {
+  min-width: 150px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid black;
+}
