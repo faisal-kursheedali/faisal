@@ -32,12 +32,21 @@ function App() {
   //     window.removeEventListener("load", handleLoad);
   //   };
   // }, []);
-  window.onload = () => {
+
+  // window.onload = () => {
+  //   getOption(dispatch, { name: "collectUserData" });
+  //   onLoad(dateTime);
+  //   // dispatch(setUserEntry(dateTime));
+  //   console.log("👋Hello developers 🧑‍💻");
+  // };
+
+  useEffect(() => {
     getOption(dispatch, { name: "collectUserData" });
     onLoad(dateTime);
     // dispatch(setUserEntry(dateTime));
     console.log("👋Hello developers 🧑‍💻");
-  };
+  }, [dispatch, getOption, onLoad]);
+
   document.onvisibilitychange = () => {
     if (state.collectUserData) {
       onLeave({ state, dispatch, date: dateTime });
