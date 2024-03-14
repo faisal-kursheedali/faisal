@@ -45,6 +45,7 @@ textarea {
   position: relative;
   /* background-image: url("path/to/your/image.jpg"); */
   background-color: white;
+  color: black;
 }
 
 /* .a4Container img {
