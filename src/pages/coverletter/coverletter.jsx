@@ -2,18 +2,6 @@ import React, { useRef, useState } from "react";
 import "./coverletter.css";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
-// import axios from "axios";
-// import ReactPDF, {
-//   Document,
-//   PDFDownloadLink,
-//   Page,
-//   StyleSheet,
-//   Text,
-//   View,
-// } from "@react-pdf/renderer";
-// import domtoimage from "dom-to-image";
-// import { html2pdf } from "html2pdf.js";
-// const SERVER_URL = "http://localhost:3000";
 
 export default function CoverLetter() {
   const [userInfo, setUserInfo] = useState({
@@ -85,89 +73,6 @@ export default function CoverLetter() {
       );
       pdf.save(fileName);
     });
-    // ReactPDF.render(<PdfUI />, `download/example.pdf`);
-    // if (!pdfRef.current) {
-    //   console.error("HTML content element not found");
-    //   return;
-    // }
-    // const htmlContent = pdfRef.current.innerHTML; // Extract HTML content
-    // // Send the HTML content to the backend for PDF generation using fetch
-    // try {
-    //   const response = await fetch(`${SERVER_URL}/api/coverletter`, {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify({ html: htmlContent }),
-    //   });
-    //   if (!response.ok) {
-    //     throw new Error(`HTTP error! status: ${response.status}`);
-    //   }
-    //   const pdfBlob = new Blob([response.data], { type: "application/pdf" });
-    //   const pdfUrl = window.URL.createObjectURL(pdfBlob);
-    //   const link = document.createElement("a");
-    //   link.href = pdfUrl;
-    //   link.setAttribute("download", "my_pdf.pdf"); // Set download filename
-    //   link.click();
-    //   window.URL.revokeObjectURL(pdfUrl);
-    //   // Handle the response (e.g., display a success message or open the PDF in a new tab)
-    // } catch (err) {
-    //   console.error(err);
-    //   // Handle errors (e.g., display an error message to the user)
-    // }
-    // try {
-    //   const response = await axios.post(`${SERVER_URL}/api/coverletter`, {
-    //     html: pdfRef.current.innerHTML,
-    //   });
-    // Handle the downloaded PDF response directly
-    // const pdfBlob = new Blob([response.data], { type: "application/pdf" });
-    // const pdfUrl = window.URL.createObjectURL(pdfBlob);
-    // const blob = await response.blob(); // Get the response as a Blob object
-    // Convert Blob to PDF
-    // const file = new File([blob], "my_pdf.pdf", { type: "application/pdf" });
-    // const link = document.createElement("a");
-    // link.href = pdfUrl;
-    // link.setAttribute("download", "my_pdf.pdf"); // Set download filename
-    // link.click();
-    // // Revoke the temporary URL after download (optional for memory cleanup)
-    // window.URL.revokeObjectURL(pdfUrl);
-    // const link = document.createElement("a");
-    // link.href = URL.createObjectURL(file);
-    // link.download = file.name;
-    // link.click();
-    // Revoke the URL after download (optional)
-    // window.URL.revokeObjectURL(link.href);
-    // } catch (err) {
-    //   console.error(err);
-    //   // Handle errors (e.g., display an error message to the user)
-    // }
-    // const element = document.getElementById("a4CoverLetter");
-    // const input = pdfRef.current;
-    // const options = { background: "white", height: 845, width: 595 };
-    // domtoimage.toPng(input, options).then((dataUrl) => {
-    //   //Initialize JSPDF
-    //   const doc = new jsPDF("p", "mm", "a4");
-    //   //Add image Url to PDF
-    //   doc.addImage(dataUrl, "PNG", 0, 0, 210, 340);
-    //   doc.save("pdfDocument.pdf");
-    // });
-    // var opt = {
-    //   margin: 1,
-    //   filename: "myfile.pdf",
-    //   image: { type: "jpeg", quality: 0.98 },
-    //   html2canvas: { scale: 2 },
-    //   jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
-    // };
-    // html2pdf().set(opt).from(element).save();
-    // const fileName = `${
-    //   userContent.generalLetter
-    //     ? "cover_letter"
-    //     : `cover_letter_${userContent.applingForCompany}`
-    // }.pdf`;
-    // const doc = new jsPDF("p", "pt", "a4");
-    // doc.html(input, {
-    //   callback: (pdf) => {
-    //     pdf.save(fileName);
-    //   },
-    // });
   };
 
   return (
@@ -176,18 +81,6 @@ export default function CoverLetter() {
         <button onClick={downloadCoverLetter} className="DownloadBtn">
           Download cover letter 📩
         </button>
-        {/* <PDFDownloadLink
-          document={
-            <PdfUI userContent={userContent} userInfo={userInfo} date={date} />
-          }
-          fileName="somename.pdf"
-        >
-          {({ blob, url, loading, error }) =>
-            loading ? "Loading document..." : "Download now!"
-          }
-        </PDFDownloadLink>
-
-        <PdfUI userContent={userContent} userInfo={userInfo} date={date} /> */}
 
         <div className="a4Container" ref={pdfRef} id="a4CoverLetter">
           <div className="coverLetter">
@@ -241,26 +134,6 @@ export default function CoverLetter() {
                   </div>
                 );
               })}
-
-              {/* {userInfo.portfolio_text !== "" &&
-              userInfo.portfolio_link !== "" ? (
-                <>
-                  <div className="cntSingleFooter">
-                    Please find my{" "}
-                    <a href={userInfo.portfolio_link}>
-                      {userInfo.portfolio_text}
-                    </a>{" "}
-                    to learn more about me. Feel free to contact me if you have
-                    any further questions you would like to discuss.
-                  </div>
-                  <div className="cntSingleFooter">
-                    Thank you for taking the time to consider my application. I
-                    look forward to hearing from you.
-                  </div>
-                </>
-              ) : (
-                <></>
-              )} */}
             </div>
             {userContent.thankgiving ? (
               <>
@@ -505,7 +378,7 @@ export default function CoverLetter() {
                 onChange={(e) =>
                   setUserInfo(
                     (state) =>
-                      (state = { ...userInfo, mian_phone: e.target.value })
+                      (state = { ...userInfo, portfolio_text: e.target.value })
                   )
                 }
               />
@@ -519,19 +392,6 @@ export default function CoverLetter() {
                       (state = { ...userInfo, experience: e.target.value })
                   )
                 }
-              />
-              date
-              <input
-                type="checkbox"
-                checked={userInfo.date}
-                onChange={(e) =>
-                  setUserInfo({ ...userInfo, date: !userInfo.date })
-                }
-                style={{
-                  display: "inline",
-                  width: "auto",
-                  marginLeft: "5px",
-                }}
               />
               <br />
               <textarea
@@ -572,6 +432,19 @@ export default function CoverLetter() {
               >
                 ⬆️ Cover letter
               </h2>
+              date
+              <input
+                type="checkbox"
+                checked={userInfo.date}
+                onChange={(e) =>
+                  setUserInfo({ ...userInfo, date: !userInfo.date })
+                }
+                style={{
+                  display: "inline",
+                  width: "auto",
+                  marginLeft: "5px",
+                }}
+              />
               <input
                 type="text"
                 value={userContent.greeting}
@@ -616,7 +489,7 @@ export default function CoverLetter() {
                 placeholder="applingForRole"
                 onChange={(e) =>
                   setUserContent({
-                    ...userInfo,
+                    ...userContent,
                     applingForRole: e.target.value,
                   })
                 }
@@ -763,7 +636,7 @@ export default function CoverLetter() {
                   </button>
                 </>
               )}
-              <input
+              <textarea
                 type="text"
                 value={userContent.thankgiving}
                 placeholder="thankgiving - telling thankyou"
@@ -792,224 +665,3 @@ export default function CoverLetter() {
     </>
   );
 }
-
-// const PdfUI = ({ userContent, userInfo, date }) => {
-//   const styles = StyleSheet.create({
-//     page: {
-//       flexDirection: "row",
-//       backgroundColor: "#E4E4E4",
-//     },
-//     section: {
-//       margin: 10,
-//       padding: 10,
-//       flexGrow: 1,
-//     },
-//     cntHeaderName: {
-//       fontSize: 32,
-//     },
-//     coverLetter: {
-//       /* color: white; */
-//       display: "flex",
-//       paddingHorizontal: 64,
-//     },
-//     cntHeaderName: {
-//       fontSize: 32,
-//     },
-//     cntHeaderPosition: {
-//       display: "block",
-//       fontWeight: "bold",
-//       color: "rgb(242, 81, 27)",
-//       fontSize: 26,
-//     },
-
-//     cntHeaderHr: {
-//       marginVertical: 10,
-//       border: 1,
-//     },
-
-//     cntGreeting: {
-//       fontWeight: "bold",
-//     },
-
-//     cntFooter: {
-//       paddingVertical: 10,
-//     },
-//     cntPara: {
-//       paddingVertical: 10,
-//     },
-//     cntSinglePara: {
-//       paddingVertical: 5,
-//     },
-//     cntSingleFooter: {
-//       paddingVertical: 5,
-//     },
-
-//     cntFooterName: {
-//       fontWeight: "bold",
-//       color: "rgb(242, 81, 27)",
-//     },
-//     cntFooterHr: {
-//       width: 100,
-//       border: 1,
-//       marginVertical: 5,
-//     },
-
-//     cntMyInfo: {
-//       // margin: 20,
-//       marginTop: 20,
-//     },
-//     // cntFooterMainMail: {
-//     //   display: "inline",
-//     // },
-//     // cntFooterSubMail: {
-//     //   display: inline,
-//     // },
-//     // cntFooterMainPhone: {
-//     //   display: inline,
-//     // },
-//     // cntFooterSubPhone: {
-//     //   display: inline,
-//     // },
-
-//     cntFooterMainMail: {
-//       fontWeight: "bold",
-//       marginRight: 5,
-//     },
-//     cntFooterMainPhone: {
-//       fontWeight: "bold",
-//       marginRight: 5,
-//     },
-
-//     cntFooterSubMail: {
-//       color: "gray",
-//     },
-//     cntFooterSubPhone: {
-//       color: "gray",
-//     },
-//     cntFooterAddressBox: {
-//       color: "gray",
-//       marginTop: 5,
-//       maxWidth: 250,
-//     },
-//   });
-
-//   return (
-//     <Document>
-//       <Page size="A4">
-//         <View>
-//           <Text style={styles.cntHeaderName}>{userInfo.name}</Text>
-//         </View>
-//         <View>
-//           <Text style={styles.cntHeaderPosition}>{userInfo.position}</Text>
-//         </View>
-//       </Page>
-//     </Document>
-//   );
-// };
-
-// // <div className="a4Container" /* ref={pdfRef} */ id="a4CoverLetter">
-// //   <div className="coverLetter">
-// //     <div className="cntHeaderName">{userInfo.name}</div>
-// //     <div className="cntHeaderPosition">{userInfo.position}</div>
-// //     {userInfo.date ? (
-// //       <>
-// //         <div className="cntHeaderDate">{`${date.getDate()}/ ${date.getMonth()}/ ${date.getFullYear()}`}</div>
-// //       </>
-// //     ) : (
-// //       <></>
-// //     )}
-// //     <div className="cntHeaderHr"></div>
-// //     <div className="cntGreeting">{userContent.greeting}</div>
-// //     <div className="cntPara">
-// //       <div className="cntSinglePara">
-// //         I am writing to express my keen interest in joining{" "}
-// //         {!userContent.generalLetter ? (
-// //           <b>{userContent.applingForCompany}</b>
-// //         ) : (
-// //           <>In you'r company</>
-// //         )}
-// //         {!userContent.generalLetter ? (
-// //           <>
-// //             {" "}
-// //             for the <b>{userContent.applingForRole}</b> position
-// //           </>
-// //         ) : (
-// //           <></>
-// //         )}
-// //         . Having {userInfo.experience} years of experience in Software
-// //         Development, I am confident that my skills and dedication
-// //         would be a valuable asset to your team. I am a fast learner
-// //         and a highly motivated individual with a strong work ethic. My
-// //         strong problem-solving skills and collaborative nature ensure
-// //         I can tackle challenges and contribute meaningfully from day
-// //         one.
-// //       </div>
-// //       {userContent.para.map((e, index) => {
-// //         return (
-// //           <div className="cntSinglePara" key={index}>
-// //             {`${e}`}
-// //           </div>
-// //         );
-// //       })}
-// //     </div>
-// //     <div className="cntFooter">
-// //       {userContent.footer.map((e, index) => {
-// //         return (
-// //           <div className="cntSingleFooter" key={index}>
-// //             {`${e}`}
-// //           </div>
-// //         );
-// //       })}
-// //       <div className="cntSingleFooter">
-// //         Please find my{" "}
-// //         <a href={userInfo.portfolio_link}>
-// //           {userInfo.portfolio_text}
-// //         </a>{" "}
-// //         to learn more about me. Feel free to contact me if you have
-// //         any further questions you would like to discuss.
-// //       </div>
-// //       <div className="cntSingleFooter">
-// //         Thank you for taking the time to consider my application. I
-// //         look forward to hearing from you.
-// //       </div>
-// //     </div>
-// //     {userContent.thankgiving ? (
-// //       <>
-// //         <div className="cntThanksgiving">
-// //           {userContent.thankgiving}
-// //         </div>
-// //       </>
-// //     ) : (
-// //       <></>
-// //     )}
-// //     {userContent.respecting ? (
-// //       <>
-// //         <div className="cntRespecting">{userContent.respecting}</div>
-// //       </>
-// //     ) : (
-// //       <></>
-// //     )}
-// //     <div className="cntFooterName">{userInfo.name}</div>
-// //     <div className="cntFooterHr"></div>
-// //     <div className="cntMyInfo">
-// //       <div className="cntFooterMail">
-// //         <div className="cntFooterMainMail">{userInfo.mian_mail}</div>
-// //         <div className="cntFooterSubMail">{userInfo.sub_mail}</div>
-// //       </div>
-// //       <div className="cntFooterPhone">
-// //         <div className="cntFooterMainPhone">
-// //           {userInfo.mian_phone}
-// //         </div>
-// //         <div className="cntFooterSubPhone">{userInfo.sub_phone}</div>
-// //       </div>
-// //       {userInfo.address ? (
-// //         <div className="cntFooterAddressBox">
-// //           <div className="cntFooterAddressHead">Address:</div>
-// //           <div className="cntFooterAddress">{userInfo.address}</div>
-// //         </div>
-// //       ) : (
-// //         <></>
-// //       )}
-// //     </div>
-// //   </div>
-// // </div>
