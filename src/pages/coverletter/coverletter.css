@@ -1,0 +1,127 @@
+:root {
+  --primary-color: rgb(242, 81, 27);
+}
+
+input {
+  display: block;
+  width: 250px;
+  margin: 1rem 0px;
+}
+
+textarea {
+  min-width: 250px;
+}
+
+.mainBox {
+  padding: 20px;
+  margin-top: 70px;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.DownloadBtn {
+  color: white;
+  background-color: green;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* .a4Container {
+  width: 8.27in;
+  height: 11.69in;
+  position: relative;
+} */
+.a4Container {
+  /* max-width: 600px; */
+  width: 8.27in;
+  height: 11.69in;
+  background-size: cover;
+  /* border: 4px solid; */
+  position: relative;
+  /* background-image: url("path/to/your/image.jpg"); */
+  background-color: white;
+}
+
+/* .a4Container img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
+
+.coverLetter {
+  /* color: white; */
+  position: absolute;
+  padding: 0px 4rem;
+}
+.cntHeaderName {
+  font-size: 32px;
+}
+.cntHeaderPosition {
+  font-weight: bold;
+  color: var(--primary-color);
+  font-size: 26;
+}
+
+.cntHeaderHr {
+  margin: 10px 0px;
+  border: 1px solid black;
+}
+
+.cntGreeting {
+  font-weight: bolder;
+}
+
+.cntPara,
+.cntFooter {
+  padding: 10px 0px;
+}
+.cntSinglePara,
+.cntSingleFooter {
+  padding: 5px 0px;
+}
+.cntThanksgiving {
+  margin-bottom: 10px;
+}
+
+.cntFooterName {
+  font-weight: bolder;
+  color: var(--primary-color);
+}
+.cntFooterHr {
+  width: 100px;
+  border: 1px solid black;
+  margin: 5px 0px;
+}
+
+.cntMyInfo {
+  margin-top: 20px;
+}
+.cntFooterMainMail,
+.cntFooterSubMail,
+.cntFooterMainPhone,
+.cntFooterSubPhone {
+  display: inline;
+}
+
+.cntFooterMainMail,
+.cntFooterMainPhone {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.cntFooterSubMail,
+.cntFooterSubPhone {
+  color: gray;
+}
+.cntFooterAddressBox {
+  color: gray;
+  margin-top: 5px;
+  max-width: 250px;
+}
