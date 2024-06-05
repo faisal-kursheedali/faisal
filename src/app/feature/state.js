@@ -3,7 +3,7 @@ import blogData from "./blogData";
 import projectData from "./projectData";
 import userAction from "./userAction";
 const initialState = {
-  isDark: false,
+  isDark: JSON.parse(localStorage.getItem("isDarkMode")) || false,
   projectData,
   blogData,
   userAction,
@@ -22,6 +22,7 @@ const StateSlice = createSlice({
     },
     setDarkmode: (state, action) => {
       state.isDark = action.payload;
+      localStorage.setItem("isDarkMode", JSON.stringify(action.payload));
     },
 
     // user actions
