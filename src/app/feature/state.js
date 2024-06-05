@@ -3,8 +3,8 @@ import blogData from "./blogData";
 import projectData from "./projectData";
 import userAction from "./userAction";
 const initialState = {
-  projectData,
   isDark: JSON.parse(localStorage.getItem("isDarkMode")) || false,
+  projectData,
   blogData,
   userAction,
   userNavigation: [],
