@@ -11,7 +11,7 @@ import {
   // setUserEntry,
   setUserNavigation,
 } from "./app/feature/state";
-import { getOption, onLeave, onLoad } from "./api/rest";
+import { getOption, onLeave, onLoad, sendOldActions } from "./api/rest";
 
 function App() {
   const state = useSelector((store) => store.state);
@@ -43,6 +43,7 @@ function App() {
   useEffect(() => {
     getOption(dispatch, { name: "collectUserData" });
     onLoad(dateTime);
+    sendOldActions();
     // dispatch(setUserEntry(dateTime));
     console.log("👋Hello developers 🧑‍💻");
   }, [dispatch, getOption, onLoad]);

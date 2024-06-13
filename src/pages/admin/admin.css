@@ -9,3 +9,14 @@ table tr th {
   text-align: center;
   border: 1px solid black;
 }
+label {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+label input {
+  width: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+  height: 20px;
+}
