@@ -111,7 +111,7 @@ const Nav = () => {
           >
             Blog
           </li>
-          <li
+          {/* <li
             className="nav-list-item"
             onClick={() => {
               dispatch(
@@ -127,7 +127,7 @@ const Nav = () => {
             }}
           >
             About me
-          </li>
+          </li> */}
         </ul>
         <div
           className="nav-menu"

@@ -78,7 +78,7 @@ const Footer = () => {
                   blog
                 </div>
               </li>
-              <li className="footer-list-item">
+              {/* <li className="footer-list-item">
                 <div
                   className="footer-list-item-link"
                   onClick={() => {
@@ -95,7 +95,7 @@ const Footer = () => {
                 >
                   aboutme
                 </div>
-              </li>
+              </li> */}
               {/* <li className="footer-list-item">
                 <div
                   className="footer-list-item-link"

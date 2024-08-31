@@ -85,7 +85,7 @@ const Sidenav = () => {
         >
           blog
         </li>
-        <li
+        {/* <li
           className="sidenav-list-item"
           onClick={() => {
             navigate("/aboutme");
@@ -102,7 +102,7 @@ const Sidenav = () => {
           }}
         >
           about me
-        </li>
+        </li> */}
       </ul>
     </div>
   );
